@@ -1,126 +1,53 @@
-import { Github, Twitter, Linkedin, Mail } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-red-500/20">
+    <footer className="bg-black border-t border-amber-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
             <h2 className="font-orbitron text-2xl font-bold text-white mb-4">
-              Synapse<span className="text-red-500">AI</span>
+              ЧЕРНОБЫЛЬ<span className="text-amber-400">26</span>
             </h2>
-            <p className="font-space-mono text-gray-300 mb-6 max-w-md">
-              Продвигаем будущее нейросвязи с передовыми технологиями интерфейса мозг-компьютер.
+            <p className="font-space-mono text-gray-400 mb-6 max-w-md text-sm leading-relaxed">
+              Страница памяти посвящена ликвидаторам Чернобыльской катастрофы — жителям Смоленской области, отдавшим здоровье и жизнь ради спасения страны.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
-                <Github size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-200">
-                <Mail size={20} />
-              </a>
+            <div className="flex items-center gap-2 text-amber-400 font-space-mono text-sm">
+              <Icon name="Flame" size={16} />
+              <span>Вечная память героям</span>
             </div>
           </div>
 
-          {/* Product */}
           <div>
-            <h3 className="font-orbitron text-white font-semibold mb-4">Продукт</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#technology"
-                  className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
-                  Технологии
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#applications"
-                  className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
-                  Применения
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#safety"
-                  className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
-                  Безопасность
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#faq"
-                  className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200"
-                >
-                  Вопросы
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="font-orbitron text-white font-semibold mb-4">Компания</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200">
-                  О нас
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200">
-                  Карьера
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200">
-                  Пресса
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-space-mono text-gray-400 hover:text-red-500 transition-colors duration-200">
-                  Контакты
-                </a>
-              </li>
+            <h3 className="font-orbitron text-white font-semibold mb-4 text-sm tracking-wider uppercase">Разделы</h3>
+            <ul className="space-y-3">
+              {[
+                { href: "#about", label: "О событии" },
+                { href: "#heroes", label: "Герои" },
+                { href: "#gallery", label: "Фотографии" },
+                { href: "#faq", label: "Вопросы" },
+                { href: "#contact", label: "Написать" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="font-space-mono text-gray-400 hover:text-amber-400 transition-colors duration-200 text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-red-500/20">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="font-space-mono text-gray-400 text-sm">2025 SynapseAI. Все права защищены.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a
-                href="#"
-                className="font-space-mono text-gray-400 hover:text-red-500 text-sm transition-colors duration-200"
-              >
-                Конфиденциальность
-              </a>
-              <a
-                href="#"
-                className="font-space-mono text-gray-400 hover:text-red-500 text-sm transition-colors duration-200"
-              >
-                Условия использования
-              </a>
-              <a
-                href="#"
-                className="font-space-mono text-gray-400 hover:text-red-500 text-sm transition-colors duration-200"
-              >
-                Cookie-политика
-              </a>
-            </div>
-          </div>
+        <div className="border-t border-amber-500/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-space-mono text-gray-600 text-xs text-center md:text-left">
+            © 2024 Страница памяти ликвидаторов Чернобыльской катастрофы, Смоленск
+          </p>
+          <p className="font-space-mono text-gray-600 text-xs">
+            26 апреля — День памяти жертв радиационных аварий и катастроф
+          </p>
         </div>
       </div>
     </footer>
